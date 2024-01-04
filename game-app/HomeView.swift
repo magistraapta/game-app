@@ -12,22 +12,18 @@ struct HomeView: View {
     @StateObject var gameVM = GameViewModel()
     
     var body: some View {
-        VStack {
-            Text("Game List")
-                .font(.title2)
-                .bold()
-            List{
-                ForEach(gameVM.game){ item in
-                    NavigationLink {
-                        GameDetailView(gameId: item.id)
-                    } label: {
-                        GameComponent(imageUrl: item.backgroundImage, gameTitle: item.name, gameReleaseDate: item.released)
-                    }
-
+        List{
+            ForEach(gameVM.game){ item in
+                NavigationLink {
+                    GameDetailView(gameId: item.id)
+                } label: {
+                    GameComponent(imageUrl: item.backgroundImage, gameTitle: item.name, gameReleaseDate: item.released)
                 }
+
             }
-            .listStyle(.plain)
         }
+        .navigationTitle("hello")
+        .listStyle(.plain)
         .refreshable {
             Task{
                 do{
