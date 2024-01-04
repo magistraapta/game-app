@@ -31,6 +31,7 @@ class GameViewModel: ObservableObject {
         self.game = decodedData.results
     }
     
+    @MainActor
     func getDetailGame(id: Int) async {
         guard let url = URL(string: "https://api.rawg.io/api/games/\(id)?token&key=f26f41e3c0074fa68c798b02bae584a0&page=1") else {
             return
