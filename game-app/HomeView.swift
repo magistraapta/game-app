@@ -17,12 +17,11 @@ struct HomeView: View {
                 NavigationLink {
                     GameDetailView(gameId: item.id)
                 } label: {
-                    GameComponent(imageUrl: item.backgroundImage, gameTitle: item.name, gameReleaseDate: item.released)
+                    GameComponent(imageUrl: item.backgroundImage, gameTitle: item.name, gameReleaseDate: item.released, gameRating: item.rating)
                 }
 
             }
         }
-        .navigationTitle("hello")
         .listStyle(.plain)
         .refreshable {
             Task{

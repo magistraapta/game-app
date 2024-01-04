@@ -12,6 +12,7 @@ struct GameComponent: View {
     @State var imageUrl: String
     @State var gameTitle: String
     @State var gameReleaseDate: String
+    @State var gameRating: Double
     
     var body: some View {
         HStack(spacing: 16){
@@ -27,19 +28,33 @@ struct GameComponent: View {
                     .cornerRadius(12)
             }
             
-            VStack (alignment: .leading){
+            VStack (alignment: .leading, spacing: 6){
                 Text(gameTitle)
                 Text(gameReleaseDate)
                     .foregroundColor(.secondary)
+                HStack{
+                    Image(systemName: "star.fill")
+                        .foregroundColor(.yellow)
+                    Text("\(removeZero(gameRating))")
+                }
             }
 
         }
+        
     }
 }
 
+func removeZero(_ value: Double) -> String {
+    let numberFormatter = NumberFormatter()
+    numberFormatter.minimumFractionDigits = 0
+    numberFormatter.maximumFractionDigits = 16
+    return numberFormatter.string(from: NSNumber(value: value)) ?? ""
+}
+
+
 struct GameComponent_Previews: PreviewProvider {
     static var previews: some View {
-        GameComponent(imageUrl: "https://media.rawg.io/media/games/20a/20aa03a10cda45239fe22d035c0ebe64.jpg", gameTitle: "GTA V", gameReleaseDate: "2013")
+        GameComponent(imageUrl: "https://media.rawg.io/media/games/20a/20aa03a10cda45239fe22d035c0ebe64.jpg", gameTitle: "GTA V", gameReleaseDate: "2013", gameRating: 4.9)
             .previewLayout(.sizeThatFits)
     }
 }
