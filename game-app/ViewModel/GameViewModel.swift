@@ -12,7 +12,7 @@ class GameViewModel: ObservableObject {
     @Published var detail: DetailGameModel?
     
     @MainActor
-    func getGameData() async throws{
+    func getGameData() async throws {
         guard let url = URL(string: "https://api.rawg.io/api/games?token&key=f26f41e3c0074fa68c798b02bae584a0&page=1") else {
             throw URLError(.badURL)
         }

@@ -22,7 +22,7 @@ class CoreDataViewModel: ObservableObject {
         fetchFavorite()
     }
     
-    func fetchFavorite(){
+    func fetchFavorite() {
         let request = NSFetchRequest<FavoriteModel>(entityName: "FavoriteModel")
         
         do{
@@ -33,7 +33,7 @@ class CoreDataViewModel: ObservableObject {
         
     }
     
-    func addFavorite(name: String, released: String, image: String){
+    func addFavorite(name: String, released: String, image: String) {
         let newFavorite = FavoriteModel(context: container.viewContext)
         newFavorite.name = name
         newFavorite.released = released
@@ -43,7 +43,7 @@ class CoreDataViewModel: ObservableObject {
         
     }
     
-    func saveData(){
+    func saveData() {
         do{
             try container.viewContext.save()
             fetchFavorite()
@@ -52,7 +52,7 @@ class CoreDataViewModel: ObservableObject {
         }
     }
     
-    func deleteFavorite(indexSet: IndexSet){
+    func deleteFavorite(indexSet: IndexSet) {
         guard let index = indexSet.first else { return }
         
         let entity = savedFavorite[index]
