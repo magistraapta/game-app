@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FE077C132B49246C004B2397 /* GameContainer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FE077C112B49246C004B2397 /* GameContainer.xcdatamodeld */; };
+		FE077C172B49270D004B2397 /* CoreDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE077C162B49270D004B2397 /* CoreDataViewModel.swift */; };
+		FE077C192B49291D004B2397 /* FavoriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE077C182B49291D004B2397 /* FavoriteView.swift */; };
 		FE5D74382B466AF100A5506C /* game_appApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5D74372B466AF100A5506C /* game_appApp.swift */; };
 		FE5D743A2B466AF100A5506C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5D74392B466AF100A5506C /* ContentView.swift */; };
 		FE5D743C2B466AF200A5506C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE5D743B2B466AF200A5506C /* Assets.xcassets */; };
@@ -22,6 +25,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FE077C122B49246C004B2397 /* GameContainer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GameContainer.xcdatamodel; sourceTree = "<group>"; };
+		FE077C162B49270D004B2397 /* CoreDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataViewModel.swift; sourceTree = "<group>"; };
+		FE077C182B49291D004B2397 /* FavoriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteView.swift; sourceTree = "<group>"; };
 		FE5D74342B466AF100A5506C /* game-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "game-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE5D74372B466AF100A5506C /* game_appApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = game_appApp.swift; sourceTree = "<group>"; };
 		FE5D74392B466AF100A5506C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -75,9 +81,11 @@
 				FE5D744E2B46752B00A5506C /* HomeView.swift */,
 				FE5D74492B466D6300A5506C /* MainView.swift */,
 				FE5D74542B467C0300A5506C /* GameDetailView.swift */,
+				FE077C182B49291D004B2397 /* FavoriteView.swift */,
 				FE5D74392B466AF100A5506C /* ContentView.swift */,
 				FE5D743B2B466AF200A5506C /* Assets.xcassets */,
 				FE5D743D2B466AF200A5506C /* Preview Content */,
+				FE077C112B49246C004B2397 /* GameContainer.xcdatamodeld */,
 			);
 			path = "game-app";
 			sourceTree = "<group>";
@@ -103,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				FE5D74522B4676A700A5506C /* GameViewModel.swift */,
+				FE077C162B49270D004B2397 /* CoreDataViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -186,11 +195,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				FE5D745F2B4693BC00A5506C /* DetailGameModel.swift in Sources */,
+				FE077C172B49270D004B2397 /* CoreDataViewModel.swift in Sources */,
 				FE5D743A2B466AF100A5506C /* ContentView.swift in Sources */,
 				FE5D744A2B466D6300A5506C /* MainView.swift in Sources */,
 				FE5D744D2B4671AB00A5506C /* GameComponent.swift in Sources */,
+				FE077C132B49246C004B2397 /* GameContainer.xcdatamodeld in Sources */,
 				FE5D744F2B46752B00A5506C /* HomeView.swift in Sources */,
 				FE5D74532B4676A700A5506C /* GameViewModel.swift in Sources */,
+				FE077C192B49291D004B2397 /* FavoriteView.swift in Sources */,
 				FE5D74382B466AF100A5506C /* game_appApp.swift in Sources */,
 				FE5D74552B467C0300A5506C /* GameDetailView.swift in Sources */,
 				FE5D74512B46753500A5506C /* ProfileView.swift in Sources */,
@@ -393,6 +405,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		FE077C112B49246C004B2397 /* GameContainer.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				FE077C122B49246C004B2397 /* GameContainer.xcdatamodel */,
+			);
+			currentVersion = FE077C122B49246C004B2397 /* GameContainer.xcdatamodel */;
+			path = GameContainer.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = FE5D742C2B466AF100A5506C /* Project object */;
 }

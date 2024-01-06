@@ -9,6 +9,7 @@ import SwiftUI
 
 struct GameDetailView: View {
     @StateObject var gameVM = GameViewModel()
+    @StateObject var coreVM = CoreDataViewModel()
     @State var gameId: Int
     var body: some View {
         ScrollView{
@@ -29,9 +30,21 @@ struct GameDetailView: View {
                     }
                     
                     VStack (alignment: .leading, spacing: 8){
-                        Text(gameDetail.name)
-                            .font(.title2)
+                        HStack {
+                            Text(gameDetail.name)
+                                .font(.title2)
                             .bold()
+                            
+                            Spacer()
+                            
+                            Button {
+                                coreVM.addFavorite(name: gameDetail.name, released: gameDetail.released, image: gameDetail.backgroundImage)
+                            } label: {
+                                Image(systemName: "heart.fill")
+                                    .font(.title2)
+                            }
+
+                        }
                         Text("Release date: \(gameDetail.released)")
                             .foregroundColor(.secondary)
                         

@@ -15,6 +15,11 @@ struct MainView: View {
                     Image(systemName: "house")
                 }
             
+            FavoriteView()
+                .tabItem {
+                    Image(systemName: "heart")
+                }
+            
             ProfileView()
                 .tabItem {
                     Image(systemName: "person.circle")

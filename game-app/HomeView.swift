@@ -10,7 +10,8 @@ import SwiftUI
 struct HomeView: View {
     
     @StateObject var gameVM = GameViewModel()
-    
+    @StateObject var coreVM = CoreDataViewModel()
+
     var body: some View {
         List{
             ForEach(gameVM.game){ item in
