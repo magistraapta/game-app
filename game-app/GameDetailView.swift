@@ -38,7 +38,7 @@ struct GameDetailView: View {
                             Spacer()
                             
                             Button {
-                                coreVM.addFavorite(name: gameDetail.name, released: gameDetail.released, image: gameDetail.backgroundImage)
+                                coreVM.addFavorite(name: gameDetail.name, released: gameDetail.released, image: gameDetail.backgroundImage, id: Int16(gameDetail.id))
                             } label: {
                                 Image(systemName: "heart.fill")
                                     .font(.title2)

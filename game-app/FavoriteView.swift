@@ -12,11 +12,11 @@ struct FavoriteView: View {
     @StateObject var coreVM = CoreDataViewModel()
     
     var body: some View {
-        if coreVM.savedFavorite.isEmpty{
-            Text("Favorite is empty")
-        } else {
-            List{
-                ForEach(coreVM.savedFavorite){ item in
+        List{
+            ForEach(coreVM.savedFavorite){ item in
+                NavigationLink {
+                    GameDetailView(gameId: Int(item.gameId))
+                } label: {
                     HStack {
                         AsyncImage(url: URL(string: item.image ?? "default")) { image in
                             image
@@ -34,14 +34,15 @@ struct FavoriteView: View {
                             Text(item.name ?? "default")
                         }
                     }
+
                 }
-                .onDelete(perform: coreVM.deleteFavorite)
             }
-            .onAppear{
-                coreVM.fetchFavorite()
-            }
-            .listStyle(.plain)
+            .onDelete(perform: coreVM.deleteFavorite)
         }
+        .onAppear{
+            coreVM.fetchFavorite()
+        }
+        .listStyle(.plain)
     }
 }
 

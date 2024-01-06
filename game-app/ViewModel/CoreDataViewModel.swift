@@ -33,11 +33,12 @@ class CoreDataViewModel: ObservableObject {
         
     }
     
-    func addFavorite(name: String, released: String, image: String) {
+    func addFavorite(name: String, released: String, image: String, id: Int16) {
         let newFavorite = FavoriteModel(context: container.viewContext)
         newFavorite.name = name
         newFavorite.released = released
         newFavorite.image = image
+        newFavorite.gameId = id
         
         saveData()
         
